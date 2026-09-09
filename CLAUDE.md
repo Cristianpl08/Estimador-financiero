@@ -155,6 +155,18 @@ Si se modifica cualquiera de estos dos bloques, mantener la fuente
 - Solo clases utilitarias estándar de Tailwind (paleta `stone`, `emerald`,
   `amber`) — no se usa configuración de colores custom.
 
+## Despliegue
+
+El sitio se publica en GitHub Pages (`https://cristianpl08.github.io/Estimador-financiero/`)
+automáticamente vía GitHub Actions (`.github/workflows/deploy.yml`) en cada
+push a `main`: instala dependencias, corre `npm run build` y publica `dist/`.
+No hace falta desplegar a mano.
+
+**Si el repo cambia de nombre**, el `base: "/<nombre-repo>/"` en
+`vite.config.js` debe actualizarse en el mismo commit — si no coincide con la
+subruta de Pages, la página carga en blanco (los assets se piden con rutas
+absolutas que no existen).
+
 ## Si se pide agregar algo nuevo
 
 - Un tercer "camino" (ej. comparar con arriendo): crear
